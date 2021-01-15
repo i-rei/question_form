@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>お問い合わせフォーム</title>
+    <style>
+body{
+  text-align:center;
+  width:100%;
+  font-family:Hiragino Maru Gothic Pro;
+  background-color:#f7f7f7;
+}
+
+.qform{
+  padding:10px;
+}
+
+input{
+  border:1px solid #ababab;
+  padding:5px 20px;
+}
+
+.Input{
+  width:290px;
+  font-size:15px;
+}
+
+textarea{
+  width:310px;
+  height:150px;
+  font-size:15px;
+  padding:10px;
+}
+
+button{
+  width:100px;
+  height:40px;
+  font-weight:bold;
+  font-size:16px;
+  border-style:none;
+}
+ button:not(:disabled){
+   cursor:pointer;
+ }
+    </style>
+  </head>
+
+  <body>
+    <h1>お問い合わせ</h1>
+    <form action="" name="questionForm">
+      <div class = "qform">
+        <p>名前（必須）</p>
+        <input type="text" class="Input" name="name" placeholder="名前" required>
+      </div>
+      <div class = "qform">
+        <p>メールアドレス（必須）</p>
+        <input type="email" class="Input" name="email" placeholder="メールアドレス" required>
+      </div>
+      <div class = "qform">
+        <p>内容（必須）</p>
+        <textarea  name="tContents" placeholder="ここに内容を入力してください。" required></textarea>
+      </div>
+      <p>
+      <input type="checkbox" name="check"  onclick="Check('send',this.checked)"/>プライバシーポリシーに同意する</p>
+      <button name="send" disabled="disabled">送信</button>
+    </form>
+    <script>
+      function Check(Name,isEnable){
+        let element = document.getElementsByName(Name).item(0);
+        element.disabled = !isEnable;
+      }
+    </script>
+  </body>
+
+</html>
